@@ -40,7 +40,7 @@ function Header() {
           <Arrow></Arrow>
         </div>
         <div className="loginPage">
-          <span>{user ? `welcome ${user.displayName}`: 'Login'}</span>
+          <span style={{cursor:'pointer'}} onClick={() => navigate('/login')}>{user ? `welcome ${user.displayName}`: 'Login'}</span>
           <hr />
         </div>
         {user && <span><button onClick={() => {
@@ -50,7 +50,7 @@ function Header() {
             console.error("Error signing out:", error);
           });
           
-        }}>Logout</button></span>}
+        }} style={{cursor:"pointer"}}>Logout</button></span>}
 
         <div className="sellMenu" onClick={() => navigate('/create')}>
           <SellButton></SellButton>
